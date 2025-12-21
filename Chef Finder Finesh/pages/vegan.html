@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>المطبخ النباتي | HomeCook Connect</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+        <div class="news-ticker">
+        <div class="ticker-text">
+            🔥 خصم 20% على حجوزات المطبخ العربي! | 📢 انضم إلينا الآن كطباخ منزلي | ✨ شيفات جدد انضموا لقسم الحلويات
+        </div>
+    </div>
+
+    <nav class="top-nav">
+        <div class="logo">HomeCook Connect</div>
+        <ul>
+            <li><a href="../index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="#search-section"><i class="fas fa-search"></i> ابحث عن طباخ</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> من نحن</a></li>
+        </ul>
+    </nav>
+    <div class="back-nav">
+    </div>
+
+    <section class="chefs-section">
+        <h1>أفضل طباخي المطبخ النباتي</h1>
+        <div class="chefs-container">
+            <div class="chef-card">
+                <img src="../images/C-004.jpg" alt="شيف امينة توفيق" onerror="this.src='https://via.placeholder.com/150'">
+                <div class="chef-info">
+                    <h3>شيف امينة توفيق (C-016)</h3>
+                    <p class="specialty">بدائل اللحوم والجبن والبيض</p>
+                    <button class="view-btn" onclick="showChefDetails('C-016')">عرض التفاصيل والحجز</button>
+                </div>
+            </div>
+
+            <div class="chef-card">
+                <img src="../images/C-005.jpg" alt=" شيف شريف حمدى" onerror="this.src='https://via.placeholder.com/150'">
+                <div class="chef-info">
+                    <h3>شيف شريف حمدي (C-017)</h3>
+                    <p class="specialty">أطباق الـ "رو فود" </p>
+                    <button class="view-btn" onclick="showChefDetails('C-017')">عرض التفاصيل والحجز</button>
+                </div>
+            </div>
+
+            <div class="chef-card">
+                <img src="../images/C-012.jpg" alt="شيف هالة فؤاد" onerror="this.src='https://via.placeholder.com/150'">
+                <div class="chef-info">
+                    <h3>شيف هالة فؤاد (C-018)</h3>
+                    <p class="specialty">المخبوزات والحلويات النباتية </p>
+                    <button class="view-btn" onclick="showChefDetails('C-018')">عرض التفاصيل والحجز</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bottom-nav">
+        <a href="../index.html"><i class="fas fa-home"></i><span>الرئيسية</span></a>
+        <a href="offers.html"><i class="fas fa-tags"></i><span>العروض</span></a>
+        <a href="invoice.html"><i class="fas fa-file-invoice-dollar"></i><span>فاتورتي</span></a>
+    </footer>
+
+    <div id="chefModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

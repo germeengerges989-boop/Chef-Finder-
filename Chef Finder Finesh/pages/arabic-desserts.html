@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> مطبخ حلويات عربيه  | HomeCook Connect</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="news-ticker">
+        <div class="ticker-text">
+            🔥 خصم 20% على حجوزات المطبخ العربي! | 📢 انضم إلينا الآن كطباخ منزلي | ✨ شيفات جدد انضموا لقسم الحلويات
+        </div>
+    </div>
+
+    <nav class="top-nav">
+        <div class="logo">HomeCook Connect</div>
+        <ul>
+            <li><a href="../index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="#search-section"><i class="fas fa-search"></i> ابحث عن طباخ</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> من نحن</a></li>
+        </ul>
+    </nav>
+    <div class="back-nav">
+    </div>
+
+    <section class="chefs-section">
+        <h1>طباخين مطبخ حلويات عربيه </h1>
+        
+        <div class="chefs-container">
+            <div class="chef-card" id="C-010">
+                <img src="../images/chef7.jpg" alt=" شيف عمار عماد ">
+                <div class="chef-info">
+                    <h3>عمار عماد  (C-010)</h3>
+                    <p class="specialty">خبير في التورتات والحلويات الشرقيه </p>
+                    <button class="view-btn" onclick="showChefDetails('C-010')">عرض التفاصيل والحجز</button>
+                </div>
+            </div>
+
+            <div class="chef-card" id="C-011">
+                <img src="../images/chef8.jpg" alt="شيف حسن محمود ">
+                <div class="chef-info">
+                    <h3>شيف حسن محمود (C-011)</h3>
+                    <p class="specialty"> مطبخ حلويات شرقيه  </p>
+                    <button class="view-btn" onclick="showChefDetails('C-011')">عرض التفاصيل والحجز</button>
+                </div>
+            </div>
+
+            <div class="chef-card" id="C-012">
+                <img src="../images/chef9.jpg" alt="شيف نور علي">
+                <div class="chef-info">
+                    <h3>شيف نور علي(C-012)</h3>
+                    <p class="specialty"> حلويات شرقيه</p>
+                    <button class="view-btn" onclick="showChefDetails('C-012')">عرض التفاصيل والحجز</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="chefModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

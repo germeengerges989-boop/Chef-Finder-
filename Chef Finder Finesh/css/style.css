@@ -1,0 +1,191 @@
+/* 1. إعدادات الأساسية */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: #f4f4f4; padding-bottom: 180px; direction: rtl; }
+
+/* 2. الشريط الإخباري (Top Ticker) */
+.news-ticker {
+    background: #e67e22;
+    color: white;
+    height: 40px;
+    overflow: hidden;
+    position: fixed;
+    top: 0; width: 100%;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+}
+.ticker-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: ticker 20s linear infinite;
+    font-weight: bold;
+}
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+
+/* 3. القائمة العلوية (Top Nav) */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 40px; width: 100%;
+    z-index: 2000;
+}
+.top-nav .logo { color: #e67e22; font-size: 22px; font-weight: bold; text-decoration: none; }
+.top-nav ul { list-style: none; display: flex; gap: 20px; }
+.top-nav ul li a { text-decoration: none; color: #444; font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 5px; }
+
+/* 4. الهيدر والبحث (الجزء الثابت) */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/cover.jpg') no-repeat center center/cover;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    z-index: 500;
+    color: white;
+}
+.hero-section h1 { margin-bottom: 20px; font-size: 24px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+
+.search-bar {
+    background: white;
+    border-radius: 50px;
+    display: flex;
+    width: 90%;
+    max-width: 500px;
+    padding: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.search-bar input { flex: 1; border: none; padding: 10px 15px; outline: none; font-size: 15px; text-align: right; border-radius: 50px; }
+.search-bar button { background: #e67e22; border: none; color: white; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+
+/* 5. قسم المطابخ (إصلاح النزول تحت الهيدر) */
+.categories { 
+    margin-top: 330px; /* دفع القسم بالكامل تحت الهيدر الثابت */
+    padding: 40px 5%; 
+    text-align: center;
+    background: #ffffff;
+    position: relative;
+    z-index: 10;
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.05);
+}
+.categories h2 { margin-bottom: 30px; font-size: 24px; color: #333; font-weight: bold; }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.cat-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.cat-card:hover { transform: translateY(-5px); border-color: #e67e22; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.cat-card img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.cat-card span { display: block; padding: 15px; font-weight: bold; color: #333; font-size: 16px; }
+
+/* 6. شريط العروض السفلي (تأثير الحركة الاحترافي) */
+.top-offers-static {
+    width: 100%;
+    background: #fff;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    position: fixed;
+    bottom: 60px;
+    z-index: 2500;
+}
+.static-offers-grid {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.offer-box {
+    text-align: center;
+    text-decoration: none;
+    flex: 1;
+    max-width: 100px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.offer-box:hover { transform: translateY(-10px) scale(1.1); }
+.offer-box img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-bottom: 8px; transition: 0.3s; }
+.offer-box:hover img { border: 2px solid #e67e22; box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3); }
+.offer-box h4 { font-size: 11px; color: #e67e22; font-weight: 800; margin-bottom: 2px; }
+.offer-box p { font-size: 10px; color: #2c3e50; font-weight: 600; }
+
+/* 7. القائمة السفلية */
+.bottom-nav {
+    position: fixed;
+    bottom: 0; width: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 4000;
+}
+.nav-item { text-decoration: none; color: #7f8c8d; display: flex; flex-direction: column; align-items: center; font-size: 11px; }
+.nav-item i { font-size: 20px; margin-bottom: 3px; }
+.nav-item.active, .nav-item:hover { color: #e67e22; }
+
+
+/* تصميم صفحة الطباخين */
+.back-nav { padding: 20px 5%; margin-top: 70px; }
+.back-nav a { text-decoration: none; color: #e67e22; font-weight: bold; }
+
+.chefs-section h1 { text-align: center; margin-bottom: 30px; color: #333; }
+.chefs-container {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 0 5%;
+}
+.chef-card {
+    background: white; width: 300px; border-radius: 15px; overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid #eee;
+}
+.chef-card img { width: 100%; height: 250px; object-fit: cover; }
+.chef-info { padding: 15px; text-align: center; }
+.chef-info h3 { color: #e67e22; margin-bottom: 10px; }
+.specialty { font-size: 14px; color: #666; margin-bottom: 10px; }
+.view-btn {
+    background: #e67e22; color: white; border: none; padding: 10px 20px;
+    border-radius: 5px; cursor: pointer; transition: 0.3s;
+}
+.view-btn:hover { background: #d35400; }
+
+/* Modal Styles */
+.modal {
+    display: none; position: fixed; z-index: 2000; left: 0; top: 0;
+    width: 100%; height: 100%; background: rgba(0,0,0,0.7);
+}
+.modal-content {
+    background: white; margin: 5% auto; padding: 20px; border-radius: 15px;
+    width: 80%; max-width: 600px; position: relative; line-height: 1.6;
+}
+.close { position: absolute; left: 20px; top: 10px; font-size: 28px; cursor: pointer; }
+.booking-form { margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
+.booking-form input { padding: 10px; width: 70%; margin-bottom: 10px; }
+
+/* إعدادات عامة لتطابق اتجاه النص العربي */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
