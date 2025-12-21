@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطبخ اسيوي | HomeCook Connect</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="news-ticker">
+        <div class="ticker-text">
+            🔥 خصم 20% على حجوزات المطبخ العربي! | 📢 انضم إلينا الآن كطباخ منزلي | ✨ شيفات جدد انضموا لقسم الحلويات
+        </div>
+    </div>
+
+    <nav class="top-nav">
+        <div class="logo">HomeCook Connect</div>
+        <ul>
+            <li><a href="../index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+            <li><a href="#search-section"><i class="fas fa-search"></i> ابحث عن طباخ</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> من نحن</a></li>
+        </ul>
+    </nav>
+    <div class="back-nav">
+    </div>
+
+    <section class="chefs-section">
+        <h1>طباخين المطبخ الاسيوي</h1>
+        
+        <div class="chefs-container">
+            <div class="chef-card" id="C-007">
+                <img src="../images/C-018.jpg" alt=" شيف  محمود السيد ">
+                <div class="chef-info">
+                    <h3> شيف محمود السيد(C-007)</h3>
+                    <p class="specialty">المطبخ الصيني</p>
+                    <button class="view-btn" onclick="showChefDetails('C-007')">عرض التفاصيل والحجز</button>
+                </div>
+            </div>
+
+            <div class="chef-card" id="C-008">
+                <img src="../images/C-011.jpg" alt="شيف  عادل كامل ">
+                <div class="chef-info">
+                    <h3>شيف عادل كامل   (C-008)</h3>
+                    <p class="specialty"> مطبخ  ياباني  </p>
+                    <button class="view-btn" onclick="showChefDetails('C-008')">عرض التفاصيل والحجز</button>
+                </div>
+            </div>
+
+            <div class="chef-card" id="C-009">
+                <img src="../images/C-004.jpg" alt=" شيف  هدير عماد">
+                <div class="chef-info">
+                    <h3>شيف  هدير عماد(C-009)</h3>
+                    <p class="specialty"> مطبخ كوري </p>
+                    <button class="view-btn" onclick="showChefDetails('C-009')">عرض التفاصيل والحجز</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="chefModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

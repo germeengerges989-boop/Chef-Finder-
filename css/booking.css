@@ -1,0 +1,22 @@
+.booking {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.booking input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.booking button {
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

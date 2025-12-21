@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>فاتورة الحجز | HomeCook Connect</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* ستايل خاص بالفاتورة فقط */
+        .invoice-box {
+            max-width: 700px; margin: 50px auto; padding: 30px;
+            border: 1px solid #eee; box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            font-size: 16px; line-height: 24px; color: #555; background: #fff;
+        }
+        .invoice-header { display: flex; justify-content: space-between; border-bottom: 2px solid #e67e22; padding-bottom: 20px; }
+        .invoice-details { margin: 20px 0; display: flex; justify-content: space-between; }
+        .invoice-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .invoice-table th { background: #f9f9f9; padding: 10px; border: 1px solid #ddd; }
+        .invoice-table td { padding: 10px; border: 1px solid #ddd; text-align: center; }
+        .total-amount { font-size: 20px; font-weight: bold; color: #e67e22; margin-top: 20px; text-align: left; }
+        .print-btn { background: #27ae60; color: white; padding: 10px 25px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; }
+        @media print { .print-btn, .back-nav { display: none; } } /* إخفاء الأزرار عند الطباعة */
+    </style>
+</head>
+<body>
+
+    <div class="invoice-box" id="invoiceContent">
+        <div class="invoice-header">
+            <div>
+                <h1 style="color: #e67e22; margin: 0;">HomeCook Connect</h1>
+                <p>خدمة الطباخ المنزلي الأولى</p>
+            </div>
+            <div style="text-align: left;">
+                <p>رقم الفاتورة: <span id="invNum">#INV-8821</span></p>
+                <p>التاريخ: <span id="invDate">2023-10-25</span></p>
+            </div>
+        </div>
+
+        <div class="invoice-details">
+            <div>
+                <strong>العميل:</strong>
+                <p>مستخدم تجريبي (Demo User)</p>
+            </div>
+            <div style="text-align: left;">
+                <strong>الطباخ:</strong>
+                <p id="targetChefName">--</p>
+            </div>
+        </div>
+
+        <table class="invoice-table">
+            <thead>
+                <tr>
+                    <th>الخدمة</th>
+                    <th>التاريخ المختار</th>
+                    <th>السعر </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>حجز طباخ منزلي - زيارة واحدة</td>
+                    <td id="targetBookingDate">--</td>
+                    <td>لا يوجد اي رسوم </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="total-amount">
+            الإجمالي: 0ج.م
+        </div>
+
+        <div style="text-align: center;">
+            <button class="print-btn" onclick="window.print()">طباعة الفاتورة <i class="fas fa-print"></i></button>
+            <br><br>
+            <a href="../index.html" style="color: #666; text-decoration: none;">العودة للرئيسية</a>
+        </div>
+    </div>
+
+    <script>
+        // كود بسيط لجلب البيانات من الـ Local Storage
+       // كود الجافا سكريبت داخل صفحة الفاتورة
+document.getElementById('chefName').innerText = localStorage.getItem('bookedChef');
+document.getElementById('bookingDate').innerText = localStorage.getItem('bookedDate');
+
+// عرض السعر مجاني
+document.getElementById('totalAmount').innerText = "0 جنيه (مجاني)";
+document.getElementById('paymentMethod').innerText = "تم الدفع (قسيمة مجانية)";
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تفاصيل الشيف</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">HomeCook Connect</div>
+</header>
+
+<div class="container">
+
+    <!-- ===== CHEF INFO ===== -->
+    <div class="chef-profile">
+        <img src="images/chef1.jpg" alt="الشيف">
+        <div class="chef-info">
+            <h1>الشيف يوسف أحمد</h1>
+            <p>متخصص في المطبخ المصري والولائم</p>
+            <p>⭐ تقييم 4.9 من 120 عميل</p>
+        </div>
+    </div>
+
+    <!-- ===== BOOKING FORM ===== -->
+    <div class="booking-form">
+        <h2>احجز الشيف</h2>
+
+        <form id="bookingForm">
+            <input type="text" required placeholder="الاسم بالكامل">
+            <input type="tel" required placeholder="رقم الهاتف">
+            <input type="date" required>
+            <select required>
+                <option value="">عدد الأفراد</option>
+                <option>5 - 10</option>
+                <option>10 - 20</option>
+                <option>أكثر من 20</option>
+            </select>
+
+            <textarea rows="4" placeholder="ملاحظات إضافية"></textarea>
+
+            <button type="submit" class="btn">تأكيد الحجز</button>
+        </form>
+
+        <div class="success-msg" id="successMsg">
+            ✅ تم إرسال طلب الحجز بنجاح، سيتم التواصل معك قريبًا
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    © 2025 HomeCook Connect
+</footer>
+
+<script src="js/booking.js"></script>
+</body>
+</html>
